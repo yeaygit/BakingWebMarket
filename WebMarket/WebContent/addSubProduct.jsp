@@ -26,7 +26,7 @@
 		<div class="form-group row">
 			<label class="col-sm-2">상품코드 : </label>
 			<div class="col-sm-3">
-			<input type="text" name="id" class="form-control">
+			<input type="text" name="id" id="id" class="form-control">
 			</div>
 		</div>
 		
@@ -35,7 +35,7 @@
 		<div class="form-group row">
 			<label class="col-sm-2">상품명 : </label>
 			<div class="col-sm-3">
-			<input type="text" name="name" class="form-control">
+			<input type="text" name="name" id="name" class="form-control">
 			</div>
 		</div>
 		
@@ -43,7 +43,7 @@
 		<div class="form-group row">
 			<label class="col-sm-2">이미지 : </label>
 			<div class="col-sm-5">
-			<input type="file" name="img" class="form-control">
+			<input type="file" name="img"  class="form-control">
 			</div>
 		</div>
 		
@@ -51,7 +51,7 @@
 		<div class="form-group row">
 			<label class="col-sm-2">가격 : </label>
 			<div class="col-sm-3">
-			<input type="text" name="price" class="form-control">
+			<input type="text" name="price" id="price" class="form-control">
 			</div>
 		</div>
 		
@@ -138,7 +138,7 @@
 		<div class="form-group row">
 			<label class="col-sm-2">재고 : </label>
 			<div class="col-sm-3">
-			<input type="text" name="stock" class="form-control">
+			<input type="text" name="stock" id="stock" class="form-control">
 			</div>
 		</div>
 		
