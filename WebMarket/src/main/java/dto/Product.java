@@ -8,14 +8,15 @@ public class Product implements Serializable{
 	
 	//변수 선언
 	private String id;//상품아이디
+	private String img;//상품사진
 	private String name;//상품 이름
 	private Integer price;//상품가격
 	private String des;//상품설명
 	private String manu;//제조사
 	private String cate;//분류
 	private long stock;//재고 수
-	private String condition;//신상품, 중고품, 재생품
-	
+	private String condition;//신상품, 소분상품
+	private String expdate;
 	
 	//생성자
 	public Product(){
@@ -36,6 +37,9 @@ public class Product implements Serializable{
 	public String getName() {
 		return name;
 	}
+	public String getFilename() {
+		return img;
+	}
 	public Integer getPrice() {
 		return price;
 	}
@@ -54,6 +58,10 @@ public class Product implements Serializable{
 	public String getCondition() {
 		return condition;
 	}
+	public String getExpDate() {
+		return expdate;
+	}
+	
 	
 	//setter
 	public void setId(String pid) {
@@ -61,6 +69,9 @@ public class Product implements Serializable{
 	}
 	public void setName(String pname) {
 		this.name=pname;
+	}
+	public void setFilename(String pimg) {
+		this.img=pimg;
 	}
 	public void setPrice(int pprice) {
 		this.price=pprice;
@@ -80,5 +91,8 @@ public class Product implements Serializable{
 	public void setCondition(String pcondition) {
 		this.condition=pcondition;
 	}
-
+	
+	public void setExpDate(String pexpdate) {
+		this.expdate=pexpdate;
+	}
 }
