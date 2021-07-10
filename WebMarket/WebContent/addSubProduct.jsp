@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
 
 <title>Baking Shopping Mall</title>
 
@@ -11,20 +10,25 @@
 <script type="text/javascript" src="./resources/js/validation.js"></script>
 </head>
 <body>
+<fmt:setLocale value='<%=request.getParameter("language") %>'/>
+<fmt:bundle basename="bundle.message">
 <jsp:include page="menu.jsp"></jsp:include>
 
 
 <div class="jumbotron">
 	<div class="container">
-		<h1 class="display-3">ªÛ«∞ µÓ∑œ«œ±‚</h1>
+		<h1 class="display-3"><fmt:message key="title"/></h1>
 	</div>
 
 </div>
 
 <div class="container">
+	<div class="text-right">
+		<a href="?language=ko">Korean</a> | <a href="?language=en">English</a>
+	</div>
 	<form name ="newsubproduct" action="./processAddSubProduct.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
 		<div class="form-group row">
-			<label class="col-sm-2">ªÛ«∞ƒ⁄µÂ : </label>
+			<label class="col-sm-2"><fmt:message key="productId"></fmt:message></label>
 			<div class="col-sm-3">
 			<input type="text" name="id" id="id" class="form-control">
 			</div>
@@ -33,7 +37,7 @@
 		
 		
 		<div class="form-group row">
-			<label class="col-sm-2">ªÛ«∞∏Ì : </label>
+			<label class="col-sm-2"><fmt:message key="pname"></fmt:message></label>
 			<div class="col-sm-3">
 			<input type="text" name="name" id="name" class="form-control">
 			</div>
@@ -41,7 +45,7 @@
 		
 		
 		<div class="form-group row">
-			<label class="col-sm-2">¿ÃπÃ¡ˆ : </label>
+			<label class="col-sm-2"><fmt:message key="productImage"></fmt:message></label>
 			<div class="col-sm-5">
 			<input type="file" name="img"  class="form-control">
 			</div>
@@ -49,42 +53,42 @@
 		
 		
 		<div class="form-group row">
-			<label class="col-sm-2">∞°∞› : </label>
+			<label class="col-sm-2"><fmt:message key="unitPrice"></fmt:message></label>
 			<div class="col-sm-3">
 			<input type="text" name="price" id="price" class="form-control">
 			</div>
 		</div>
 		
 		<div class="form-group row">
-			<label class="col-sm-2">¡§∫∏ : </label>
+			<label class="col-sm-2"><fmt:message key="description"></fmt:message></label>
 			<div class="col-sm-3">
 			<textarea name="des" cols="50" rows="2" class="form-control"></textarea>
 			</div>
 		</div>
 		
 		<div class="form-group row">
-			<label class="col-sm-2">¡¶¡∂ªÁ : </label>
+			<label class="col-sm-2"><fmt:message key="manufacturer"></fmt:message> </label>
 			<div class="col-sm-3">
 			<input type="text" name="manu" class="form-control">
 			</div>
 		</div>
 		
 		<div class="form-group row">
-			<label class="col-sm-2">∫–∑˘ : </label>
+			<label class="col-sm-2"><fmt:message key="category"></fmt:message></label>
 			<div class="col-sm-3">
 			<input type="text" name="cate" class="form-control">
 			</div>
 		</div>
 	
 		<div class="form-group row">
-			<label class="col-sm-2">¿Ø≈Î±‚«— : </label>
+			<label class="col-sm-2"><fmt:message key="expirationDate"></fmt:message></label>
 			<div class="col-sm-3">
 			<p><select name="expdate1">
 			<option value="2021">2021</option>
 			<option value="2022">2022</option>
 			<option value="2023">2023</option>
 			<option value="2024">2024</option>
-			</select>≥‚
+			</select>ÎÖÑ(year)
 			<select name="expdate2">
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -98,7 +102,7 @@
 			<option value="10">10</option>
 			<option value="11">11</option>
 			<option value="12">12</option>
-			</select>ø˘
+			</select>Ïõî(month)
 			<select name="expdate3">
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -131,29 +135,29 @@
 			<option value="29">29</option>	
 			<option value="30">30</option>
 			<option value="31">31</option>		
-			</select>¿œ
+			</select>Ïùº(day)
 			</div>
 		</div>
 		
 		<div class="form-group row">
-			<label class="col-sm-2">¿Á∞Ì : </label>
+			<label class="col-sm-2"><fmt:message key="unitsInstock"></fmt:message></label>
 			<div class="col-sm-3">
 			<input type="text" name="stock" id="stock" class="form-control">
 			</div>
 		</div>
 		
 		<div class="form-group row">
-			<label class="col-sm-2">ªÛ≈¬ : </label>
+			<label class="col-sm-2"><fmt:message key="condition"></fmt:message></label>
 			<div class="col-sm-5">
-			<input type="radio" name="condition" value="new">Ω≈¡¶«∞
-			<input type="radio" name="condition" value="subdivision">º“∫–«— ¡¶«∞
+			<input type="radio" name="condition" value="new"><fmt:message key="condition_New"></fmt:message>
+			<input type="radio" name="condition" value="subdivision"><fmt:message key="condition_Divided"></fmt:message>
 			</div>
 		</div>
 		
 		
 		<div class="form-group row">
 			<div class="col-sm-offset-2 col-sm-10">
-				<input type="submit" class="btn btn-primary" value="µÓ∑œ" onclick="CheckAddProduct()">
+				<input type="submit" class="btn btn-primary" value="<fmt:message key="button"></fmt:message>" onclick="CheckAddProduct()">
 			</div> 
 		</div>
 	</form>
@@ -165,6 +169,7 @@
 
 
 
-
+</fmt:bundle>
 </body>
+
 </html>
